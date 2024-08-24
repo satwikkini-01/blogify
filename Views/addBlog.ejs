@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./Partials/head") %>
+    <title>Add Blog</title>
+  </head>
+  <body>
+    <%- include("./Partials/nav") %>
+    <div class="container">
+      <form action="/blog/" method="post">
+        <div class="mb-3 mt-4">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="title"
+            class="form-control"
+            id="title"
+            name="title"
+            aria-describedby="title"
+          />
+        </div>
+        <label for="body">Body</label>
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="body"
+            name="body"
+            style="height: 100px"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <%- include ("./Partials/script") %>
+  </body>
+</html>
