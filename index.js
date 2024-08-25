@@ -12,7 +12,7 @@ const Blog = require("./Models/blog");
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB Connected"))
-  .catch((error) => console.log("Error Connecting MongoDB"));
+  .catch((error) => console.log("Error Connecting MongoDB", error));
 
 const app = express();
 const PORT = process.env.PORT;
@@ -36,3 +36,5 @@ app.use("/blog", blogRoute);
 app.listen(PORT, () => {
   console.log(`Server running on PORT: ${PORT}`);
 });
+
+module.exports = app;
